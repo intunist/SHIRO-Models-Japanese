@@ -61,7 +61,7 @@ This will create a text file for each audio file that can be viewed in Audacity.
 
 If you want to convert these Audacity labels to the HTK LAB format (which is required for NNSVS/ENUNU) then you can use [Lab2Audacity](https://github.com/UtaUtaUtau/nnsvslabeling) to convert them.
 
-## (機械翻訳です)
+### (機械翻訳です)
 
 SHIRO Phoneme Alignment Toolkit用日本語多人数話者モデル。
 
