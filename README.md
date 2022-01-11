@@ -62,21 +62,10 @@ This will create a text file for each audio file that can be viewed in Audacity.
 If you want to convert these Audacity labels to the HTK LAB format (which is required for NNSVS/ENUNU) then you can use [Lab2Audacity](https://github.com/UtaUtaUtau/nnsvslabeling) to convert them.
 ______
 ## Lazy SHIRO build instructions (Ubuntu)
+(this will put shiro in the current folder, copy as one line.)
 ```
-sudo apt install git build-essential
-git clone https://github.com/Sleepwalking/SHIRO
-git clone https://github.com/Sleepwalking/ciglet
-cd ciglet
-make single-file
-cp single-file ../SHIRO/external/ciglet
-cd ..
-cd SHIRO/external
-git clone https://github.com/Sleepwalking/liblrhsmm
-cd liblrhsmm 
-make
-cd ../.. 
-mkdir build
-make
+wget https://raw.githubusercontent.com/DynamiVox/SHIRO-Models-Japanese/main/install-shiro-ubuntu.sh && chmod +x install-shiro-ubuntu.sh && ./install-shiro-ubuntu.sh
+
 ```
 ______
 ### (機械翻訳です)
