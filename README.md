@@ -40,7 +40,7 @@ lua shiro-fextr.lua /path/to/your/index.csv -d /path/to/your/dataset -x ./extrac
 
 Create a placeholder alignment:
 ```
-lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/phonemap.json -d /path/to/your/dataset -e .param -n 36 -L sil -R sil > /path/to/your/dataset/unaligned.json
+lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/dyv_jp_phonemap.json -d /path/to/your/dataset -e .param -n 36 -L sil -R sil > /path/to/your/dataset/unaligned.json
 ```
 
 Perform the first alignment:
@@ -102,7 +102,7 @@ lua shiro-fextr.lua /path/to/your/index.csv -d /path/to/your/dataset -x ./extrac
 
 プレースホルダーアライメントを作成します。
 ```
-lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/phonemap.json -d /path/to/your/dataset -e .param -n 36 -L sil -R sil > /path/to/your/dataset/unaligned.jsonのようなものです。
+lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/dyv_jp_phonemap.json -d /path/to/your/dataset -e .param -n 36 -L sil -R sil > /path/to/your/dataset/unaligned.jsonのようなものです。
 ```
 
 最初のアライメントを実行する。
