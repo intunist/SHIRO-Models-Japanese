@@ -1,6 +1,8 @@
 # SHIRO-Models-Japanese
 Japanese Multi-Speaker Models for the SHIRO Phoneme Alignment Toolkit.
 
+[日本語訳?](#機械翻訳です)
+
 DynamiVox's Japanese models for [SHIRO](https://github.com/Sleepwalking/SHIRO).
 The initial models are based on a multi-speaker 9 hour dataset of Japanese singing and some speech.
 The current dataset is mostly female vocals and a few tenor males and will not work well for baritone and bass voices.
