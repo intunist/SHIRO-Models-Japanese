@@ -60,7 +60,25 @@ lua shiro-seg2lab.lua /path/to/your/dataset/refined-alignment.json -t 0.005
 This will create a text file for each audio file that can be viewed in Audacity.
 
 If you want to convert these Audacity labels to the HTK LAB format (which is required for NNSVS/ENUNU) then you can use [Lab2Audacity](https://github.com/UtaUtaUtau/nnsvslabeling) to convert them.
-
+______
+## Lazy SHIRO build instructions (Ubuntu)
+```
+sudo apt install git build-essential
+git clone https://github.com/Sleepwalking/SHIRO
+git clone https://github.com/Sleepwalking/ciglet
+cd ciglet
+make single-file
+cp single-file ../SHIRO/external/ciglet
+cd ..
+cd SHIRO/external
+git clone https://github.com/Sleepwalking/liblrhsmm
+cd liblrhsmm 
+make
+cd ../.. 
+mkdir build
+make
+```
+______
 ### (機械翻訳です)
 
 SHIRO Phoneme Alignment Toolkit用日本語多人数話者モデル。
