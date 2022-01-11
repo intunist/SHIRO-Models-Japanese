@@ -12,3 +12,5 @@ make
 cd ../..
 mkdir build
 make
+cd ..
+rm -rf ciglet
