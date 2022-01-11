@@ -59,7 +59,7 @@ This will create a text file for each audio file that can be viewed in Audacity.
 
 If you want to convert these Audacity labels to the HTK LAB format (which is required for NNSVS/ENUNU) then you can use [Lab2Audacity](https://github.com/UtaUtaUtau/nnsvslabeling) to convert them.
 
-(機械翻訳です)
+## (機械翻訳です)
 
 SHIRO Phoneme Alignment Toolkit用日本語多人数話者モデル。
 
@@ -88,3 +88,35 @@ dyv_jp_generic: 女性ボーカルと男性ボーカルの両方で学習させ�
 バリトンや低音の音声の場合、ラベリングに成功する確率を上げるために、音声の長さを20秒に制限する。
 その他の声質については、30秒以内を推奨しますが、数分の音声でも妥当な結果が得られることがあります。
 ただし、RAMの関係で1分以内を推奨します。
+
+## 使用方法
+readmeファイルにある指示に従い、ソースコードからSHIROをビルドする。Windows Subsystem for Linux (WSL)の中でビルドすることができます。
+アドバイス SHIROがビルドできない場合は、SHIROのフォルダの中にbuildフォルダを作成する。
+
+特徴抽出を行う。
+```
+lua shiro-fextr.lua /path/to/your/index.csv -d /path/to/your/dataset -x ./extractors/extractor-xxcc-mfcc12-da-16k -r 16000
+```
+
+プレースホルダーアライメントを作成します。
+```
+lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/phonemap.json -d /path/to/your/dataset -e .param -n 36 -L sil -R sil > /path/to/your/dataset/unaligned.jsonのようなものです。
+```
+
+最初のアライメントを実行する。
+```
+./shiro-align -T -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/unaligned.json -g > /path/to/your/dataset/initial-alignment.json
+```
+
+ファイナルアライメントを実行します。
+```
+./shiro-align -T -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/initial-alignment.json -p 30 -d 50 > /path/to/your/dataset/refined-alignment.jsonを指定します。
+```
+
+最終的なアライメントをAudacityのラベルに変換する。
+```
+lua shiro-seg2lab.lua /path/to/your/dataset/refined-alignment.json -t 0.005
+```
+これで、各オーディオファイルに対して、Audacityで閲覧可能なテキストファイルが作成されます。
+
+もし、これらのAudacityラベルをHTK LABフォーマット（NNSVS/ENUNUで必要）に変換したい場合は、Lab2Audacityを使って変換することができます。
