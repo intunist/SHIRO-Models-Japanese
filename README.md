@@ -45,12 +45,12 @@ lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/dyv_jp_phonemap.json -d 
 
 Perform the first alignment:
 ```
-./shiro-align -T -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/unaligned.json -g > /path/to/your/dataset/initial-alignment.json
+./shiro-align -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/unaligned.json -g > /path/to/your/dataset/initial-alignment.json
 ```
 
 Perform the final alignment:
 ```
-./shiro-align -T -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/initial-alignment.json -p 30 -d 50 > /path/to/your/dataset/refined-alignment.json
+./shiro-align -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/initial-alignment.json -p 30 -d 50 > /path/to/your/dataset/refined-alignment.json
 ```
 
 Convert final alignment to audacity labels:
