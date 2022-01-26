@@ -1,3 +1,4 @@
+sudo apt update
 sudo apt install git build-essential lua5.1
 git clone https://github.com/Sleepwalking/SHIRO
 git clone https://github.com/Sleepwalking/ciglet
