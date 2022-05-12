@@ -16,13 +16,13 @@ The normal model is ideal for when the index includes vowel riffs/runs from the 
 The "no runs" model is best for when the vocal runs are not indexed and the consonant alignment is more accurate.
 It is always safe to use the normal model regardless. The "no-runs" model will also work but the alignment on runs will likely to miss.
 
-dyv_jp_generic: Generic model with a mix of both male and female vocals.
+dvxjp6_generic: Generic model with a mix of both male and female vocals.
 
-(wip, unavailable) dyv_jp_female: Model with only female vocal data, regardless of voice type.
+(wip, unavailable) dvxjp6_female: Model with only female vocal data, regardless of voice type.
 
-(wip, unavailable) dyv_jp_male: Model for tenor and high-baritone male voices.
+(wip, unavailable) dvxjp6_male: Model for tenor and high-baritone male voices.
 
-(wip, unavailable) dyv_jp_low_male: Model for low baritone and bass male voices.
+(wip, unavailable) dvxjp6_low_male: Model for low baritone and bass male voices.
 
 The generic model will not work well for low male voices due to lack of examples in the dataset.
 For baritone and bass voices, limit the length of the audio to 20 seconds for any chance of alignment.
@@ -72,7 +72,7 @@ ______
 
 SHIRO Phoneme Alignment Toolkit用日本語多人数話者モデル。
 
-DynamiVoxのSHIRO用日本語音声ラベリングモデルです。
+DYVAUXのSHIRO用日本語音声ラベリングモデルです。
 初期モデルは、9時間分の日本語歌唱コーパスに基づき作成されています。
 現在のコーパスは、ほとんどが女性ボーカルで、テナー男性ボーカルも数名含まれており、バリトンや低音ボイスではうまく機能しません。
 これらのモデルは歌声に特化して学習されたものであり、音声に対してはうまく機能しないかもしれません。
@@ -85,13 +85,13 @@ DynamiVoxのSHIRO用日本語音声ラベリングモデルです。
 no-runs "と題されたモデルは、index.csvファイルにこれらの声帯装飾が含まれていない場合に最適です。子音ラベリングもこのモデルの方がより正確です。
 通常モデルを使用するのが安全ですが、"no-runs "モデルも機能します。ただし、「no-runs」モデルを使用すると、声帯装飾のラベリングは失敗する可能性が高いことに注意してください。
 
-dyv_jp_generic: 女性ボーカルと男性ボーカルの両方で学習させた一般的なモデル。
+dvxjp6_generic: 女性ボーカルと男性ボーカルの両方で学習させた一般的なモデル。
 
-(利用不可) dyv_jp_female: 声質に関係なく、女性ボーカルのみのデータで構成されたモデル。
+(利用不可) dvxjp6_female: 声質に関係なく、女性ボーカルのみのデータで構成されたモデル。
 
-(利用不可) dyv_jp_male: テナー、ハイバリトンの男声用モデル。
+(利用不可) dvxjp6_male: テナー、ハイバリトンの男声用モデル。
 
-(利用不可) dyv_jp_low_male: 低音バリトン、低音バスの男声用モデル。
+(利用不可) dvxjp6_low_male: 低音バリトン、低音バスの男声用モデル。
 
 一般的なモデルでは、コーパスに例がないため、低い男声のラベリングはうまくいかない。
 バリトンや低音の音声の場合、ラベリングに成功する確率を上げるために、音声の長さを20秒に制限する。
