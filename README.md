@@ -40,26 +40,26 @@ lua shiro-fextr.lua /path/to/your/index.csv -d /path/to/your/dataset -x ./extrac
 
 Create a placeholder alignment:
 ```
-lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/dyv_jp_phonemap.json -d /path/to/your/dataset -e .param -n 36 -L sil -R sil > /path/to/your/dataset/unaligned.json
+lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/dvxjp6_phonemap.json -d /path/to/your/dataset -e .param -n 36 -L pau -R pau > /path/to/your/dataset/unaligned.json
 ```
 
 Perform the first alignment:
 ```
-./shiro-align -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/unaligned.json -g > /path/to/your/dataset/initial-alignment.json
+./shiro-align -m /path/to/dvxjp6_generic.hsmm -s /path/to/your/dataset/unaligned.json -g > /path/to/your/dataset/initial.json
 ```
 
 Perform the final alignment:
 ```
-./shiro-align -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/initial-alignment.json -p 30 -d 50 > /path/to/your/dataset/refined-alignment.json
+./shiro-align -m /path/to/dvxjp6_generic.hsmm -s /path/to/your/dataset/initial.json -p 60 -d 80 > /path/to/your/dataset/refined.json
 ```
 
 Convert final alignment to audacity labels:
 ```
-lua shiro-seg2lab.lua /path/to/your/dataset/refined-alignment.json -t 0.005
+lua shiro-seg2lab.lua /path/to/your/dataset/refined.json -t 0.005
 ```
 This will create a text file for each audio file that can be viewed in Audacity.
 
-If you want to convert these Audacity labels to the HTK LAB format (which is required for NNSVS/ENUNU) then you can use [Lab2Audacity](https://github.com/UtaUtaUtau/nnsvslabeling) to convert them.
+If you want to convert these Audacity labels to the HTK LAB format (which is required for NNSVS/ENUNU) then you can use [Audacitylabel2Lab](https://github.com/oatsu-gh/oto2lab/tree/master/tool/ust2shiroindex) to convert them.
 ______
 ## Lazy SHIRO build instructions (Ubuntu)
 (this will put shiro in the current folder, copy as one line.)
@@ -109,23 +109,23 @@ lua shiro-fextr.lua /path/to/your/index.csv -d /path/to/your/dataset -x ./extrac
 
 プレースホルダーアライメントを作成します。
 ```
-lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/dyv_jp_phonemap.json -d /path/to/your/dataset -e .param -n 36 -L sil -R sil > /path/to/your/dataset/unaligned.jsonのようなものです。
+lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/dyv_jp_phonemap.json -d /path/to/your/dataset -e .param -n 36 -L pau -R pau > /path/to/your/dataset/unaligned.jsonのようなものです。
 ```
 
 最初のアライメントを実行する。
 ```
-./shiro-align -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/unaligned.json -g > /path/to/your/dataset/initial-alignment.json
+./shiro-align -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/unaligned.json -g > /path/to/your/dataset/initial.json
 ```
 
 ファイナルアライメントを実行します。
 ```
-./shiro-align -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/initial-alignment.json -p 30 -d 50 > /path/to/your/dataset/refined-alignment.jsonを指定します。
+./shiro-align -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/initial.json -p 60 -d 80 > /path/to/your/dataset/refined.jsonを指定します。
 ```
 
 最終的なアライメントをAudacityのラベルに変換する。
 ```
-lua shiro-seg2lab.lua /path/to/your/dataset/refined-alignment.json -t 0.005
+lua shiro-seg2lab.lua /path/to/your/dataset/refined.json -t 0.005
 ```
 これで、各オーディオファイルに対して、Audacityで閲覧可能なテキストファイルが作成されます。
 
-もし、これらのAudacityラベルをHTK LABフォーマット（NNSVS/ENUNUで必要）に変換したい場合は、Lab2Audacityを使って変換することができます。
+もし、これらのAudacityラベルをHTK LABフォーマット（NNSVS/ENUNUで必要）に変換したい場合は、[Audacitylabel2Lab](https://github.com/oatsu-gh/oto2lab/tree/master/tool/ust2shiroindex)を使って変換することができます。
