@@ -4,7 +4,7 @@ Japanese Multi-Speaker Models for the SHIRO Phoneme Alignment Toolkit.
 [日本語訳?](#機械翻訳です)
 
 DYVAUX's Japanese models for [SHIRO](https://github.com/Sleepwalking/SHIRO).
-The initial models are based on a multi-speaker 9 hour dataset of Japanese singing and some speech.
+The initial models are based on a multi-speaker 17.8 hour dataset of Japanese singing and some speech.
 The current dataset is mostly female vocals and a few tenor males and will not work well for baritone and bass voices.
 These models were trained to work specifically with singing, speech alignment may not be as expected.
 Because of how the dataset was prepared, alignment with long silences is especially decent.
@@ -73,7 +73,7 @@ ______
 SHIRO Phoneme Alignment Toolkit用日本語多人数話者モデル。
 
 DYVAUXのSHIRO用日本語音声ラベリングモデルです。
-初期モデルは、9時間分の日本語歌唱コーパスに基づき作成されています。
+初期モデルは、17.8時間分の日本語歌唱コーパスに基づき作成されています。
 現在のコーパスは、ほとんどが女性ボーカルで、テナー男性ボーカルも数名含まれており、バリトンや低音ボイスではうまく機能しません。
 これらのモデルは歌声に特化して学習されたものであり、音声に対してはうまく機能しないかもしれません。
 コーパスの特性上、長い無音部分が非常によく並びます。
