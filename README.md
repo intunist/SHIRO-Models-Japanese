@@ -16,7 +16,7 @@ The normal model is ideal for when the index includes vowel riffs/runs from the 
 The "no runs" model is best for when the vocal runs are not indexed and the consonant alignment is more accurate.
 It is always safe to use the normal model regardless. The "no-runs" model will also work but the alignment on runs will likely to miss.
 
-dvxjp6_generic: Generic model with a mix of both male and female vocals.
+intunist-jp6_generic: Generic model with a mix of both male and female vocals.
 
 (wip, unavailable) intunist-jp6_female: Model with only female vocal data, regardless of voice type.
 
@@ -40,7 +40,7 @@ lua shiro-fextr.lua /path/to/your/index.csv -d /path/to/your/dataset -x ./extrac
 
 Create a placeholder alignment:
 ```
-lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/dvxjp6_phonemap.json -d /path/to/your/dataset -e .param -n 36 -L pau -R pau > /path/to/your/dataset/unaligned.json
+lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/intunist-jp6_phonemap.json -d /path/to/your/dataset -e .param -n 36 -L pau -R pau > /path/to/your/dataset/unaligned.json
 ```
 
 Perform the first alignment:
