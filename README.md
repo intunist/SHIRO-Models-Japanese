@@ -3,7 +3,7 @@ Japanese Multi-Speaker Models for the SHIRO Phoneme Alignment Toolkit.
 
 [日本語訳?](#機械翻訳です)
 
-UPT3's Japanese models for [SHIRO](https://github.com/Sleepwalking/SHIRO).
+Intunists's Japanese models for [SHIRO](https://github.com/Sleepwalking/SHIRO).
 The initial models are based on a multi-speaker 17.8 hour dataset of Japanese singing and some speech.
 The current dataset is mostly female vocals and a few tenor males and will not work well for baritone and bass voices.
 These models were trained to work specifically with singing, speech alignment may not be as expected.
@@ -18,11 +18,11 @@ It is always safe to use the normal model regardless. The "no-runs" model will a
 
 dvxjp6_generic: Generic model with a mix of both male and female vocals.
 
-(wip, unavailable) dvxjp6_female: Model with only female vocal data, regardless of voice type.
+(wip, unavailable) intunist-jp6_female: Model with only female vocal data, regardless of voice type.
 
-(wip, unavailable) dvxjp6_male: Model for tenor and high-baritone male voices.
+(wip, unavailable) intunist-jp6_male: Model for tenor and high-baritone male voices.
 
-(wip, unavailable) dvxjp6_low_male: Model for low baritone and bass male voices.
+(wip, unavailable) intunist-jp6_low_male: Model for low baritone and bass male voices.
 
 The generic model will not work well for low male voices due to lack of examples in the dataset.
 For baritone and bass voices, limit the length of the audio to 20 seconds for any chance of alignment.
@@ -45,12 +45,12 @@ lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/dvxjp6_phonemap.json -d 
 
 Perform the first alignment:
 ```
-./shiro-align -m /path/to/dvxjp6_generic.hsmm -s /path/to/your/dataset/unaligned.json -g > /path/to/your/dataset/initial.json
+./shiro-align -m /path/to/intunist-jp6_generic.hsmm -s /path/to/your/dataset/unaligned.json -g > /path/to/your/dataset/initial.json
 ```
 
 Perform the final alignment:
 ```
-./shiro-align -m /path/to/dvxjp6_generic.hsmm -s /path/to/your/dataset/initial.json -p 60 -d 80 > /path/to/your/dataset/refined.json
+./shiro-align -m /path/to/intunist-jp6_generic.hsmm -s /path/to/your/dataset/initial.json -p 60 -d 80 > /path/to/your/dataset/refined.json
 ```
 
 Convert final alignment to audacity labels:
@@ -64,7 +64,7 @@ ______
 ## Lazy SHIRO build instructions (Ubuntu)
 (this will put shiro in the current folder, copy as one line.)
 ```
-wget https://raw.githubusercontent.com/DynamiVox/SHIRO-Models-Japanese/main/install-shiro-ubuntu.sh && chmod +x install-shiro-ubuntu.sh && ./install-shiro-ubuntu.sh
+wget https://raw.githubusercontent.com/intunist/SHIRO-Models-Japanese/main/install-shiro-ubuntu.sh && chmod +x install-shiro-ubuntu.sh && ./install-shiro-ubuntu.sh
 
 ```
 ______
@@ -72,7 +72,7 @@ ______
 
 SHIRO Phoneme Alignment Toolkit用日本語多人数話者モデル。
 
-DYVAUXのSHIRO用日本語音声ラベリングモデルです。
+IntunistのSHIRO用日本語音声ラベリングモデルです。
 初期モデルは、17.8時間分の日本語歌唱コーパスに基づき作成されています。
 現在のコーパスは、ほとんどが女性ボーカルで、テナー男性ボーカルも数名含まれており、バリトンや低音ボイスではうまく機能しません。
 これらのモデルは歌声に特化して学習されたものであり、音声に対してはうまく機能しないかもしれません。
@@ -114,12 +114,12 @@ lua shiro-mkseg.lua /path/to/your/index.csv -m /path/to/dyv_jp_phonemap.json -d 
 
 最初のアライメントを実行する。
 ```
-./shiro-align -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/unaligned.json -g > /path/to/your/dataset/initial.json
+./shiro-align -m /path/to/intunist-jp6_generic.hsmm -s /path/to/your/dataset/unaligned.json -g > /path/to/your/dataset/initial.json
 ```
 
 ファイナルアライメントを実行します。
 ```
-./shiro-align -m /path/to/dyv_jp_generic.hsmm -s /path/to/your/dataset/initial.json -p 60 -d 80 > /path/to/your/dataset/refined.jsonを指定します。
+./shiro-align -m /path/to/intunist-jp6_generic.hsmm -s /path/to/your/dataset/initial.json -p 60 -d 80 > /path/to/your/dataset/refined.jsonを指定します。
 ```
 
 最終的なアライメントをAudacityのラベルに変換する。
